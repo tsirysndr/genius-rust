@@ -14,15 +14,19 @@ pub struct Referent {
     pub fragment: String,
     pub id: u32,
     /// > Only with `user-core` level token
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub ios_app_url: Option<String>,
     pub is_description: bool,
     /// > Only with `user-core` level token
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub is_image: Option<bool>,
     pub path: String,
     pub range: Map<String, String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub song_id: Option<u32>,
     pub url: String,
     /// > Only with `user-core` level token
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub current_user_metadata: Option<UserMetadata>,
     pub annotations: Vec<Annotation>,
 }
@@ -31,6 +35,7 @@ pub struct Referent {
 pub struct Annotation {
     pub api_path: String,
     pub body: Body,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub comment_count: Option<u32>,
     pub community: bool,
     pub has_voters: bool,
@@ -40,6 +45,7 @@ pub struct Annotation {
     pub state: String,
     pub url: String,
     pub verified: bool,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub votes_total: Option<u32>,
     pub current_user_metadata: UserMetadata,
     pub authors: Vec<AnnotationAuthor>,
