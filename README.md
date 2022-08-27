@@ -1,13 +1,13 @@
-![Crates.io](https://img.shields.io/crates/v/genius-rs?color=%2300aa00&style=flat-square) ![Crates.io (recent)](https://img.shields.io/crates/dr/genius-rs?style=flat-square) ![Crates.io](https://img.shields.io/crates/l/genius-rs?style=flat-square)
+![Crates.io](https://img.shields.io/crates/v/genius-rust?color=%2300aa00) ![Crates.io (recent)](https://img.shields.io/crates/dr/genius-rust) ![Crates.io](https://img.shields.io/crates/l/genius-rust)
 
-# genius_rs
+# genius_rust
 
 Rust library that allows interact with Genius API.
 
 ##  Searching for a song
 
 ```rust
-use genius_rs::Genius;
+use genius_rust::Genius;
 
 #[tokio::main]
 async fn main() {
@@ -20,7 +20,7 @@ async fn main() {
 ## Getting lyrics
 
 ```rust
-use genius_rs::Genius;
+use genius_rust::Genius;
 
 #[tokio::main]
 async fn main() {
@@ -36,7 +36,7 @@ async fn main() {
 ## Getting deeper information for a song by id
 
 ```rust
-use genius_rs::Genius;
+use genius_rust::Genius;
 
 #[tokio::main]
 async fn main() {
