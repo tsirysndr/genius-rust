@@ -1,11 +1,11 @@
-use serde::Deserialize;
+use serde::{Serialize, Deserialize};
 
 use crate::annotation::Referent;
 use crate::song::{Artist, SongPerformance};
 use crate::user::UserMetadata;
 use crate::Date;
 
-#[derive(Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Album {
     /// Path of the API.
     pub api_path: String,
@@ -65,7 +65,7 @@ pub struct Album {
     pub song_performances: Option<Vec<SongPerformance>>,
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct CoverArt {
     /// If this art have annotations.
     pub annotated: bool,

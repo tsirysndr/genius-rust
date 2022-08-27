@@ -1,11 +1,11 @@
-use serde::Deserialize;
+use serde::{Serialize, Deserialize};
 
 use crate::album::Album;
 use crate::annotation::Referent;
 use crate::user::{User, UserMetadata};
 use crate::{Body, Date};
 
-#[derive(Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Song {
     /// Number of annotations on this song.
     pub annotation_count: u32,
@@ -178,20 +178,20 @@ pub struct Song {
     pub writer_artists: Option<Vec<Artist>>,
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct TrackingPaths {
     pub aggregate: String,
     pub concurrent: String,
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct SongContributor {
     pub contributions: Vec<String>,
     pub artist: Artist,
     pub user: Option<User>,
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct SongRelationship {
     /// The type of relationship can be `samples`, `sampled_in`, `interpolates`, `interpolated_by`, `cover_of`, `covered_by`, `remix_of`, `remixed_by`, `live_version_of` and `performed_live_as`.
     pub relationship_type: String,
@@ -199,13 +199,13 @@ pub struct SongRelationship {
     pub songs: Vec<Option<Song>>,
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct SongPerformance {
     pub label: String,
     pub artists: Vec<Artist>,
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct SongMedia {
     /// Spotify path of the song with `:` instead `/`, weird.
     pub native_uri: Option<String>,
@@ -222,7 +222,7 @@ pub struct SongMedia {
     pub url: String,
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct SongStatus {
     /// Number of annotations accepted on this song.
     pub accepted_annotations: Option<u32>,
@@ -242,7 +242,7 @@ pub struct SongStatus {
     pub pageviews: Option<u32>,
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Artist {
     /// Path of the API.
     pub api_path: String,

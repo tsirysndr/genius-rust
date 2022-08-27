@@ -68,7 +68,7 @@ use album::Album;
 use error::GeniusError;
 use reqwest::Client;
 use search::Hit;
-use serde::Deserialize;
+use serde::{Serialize, Deserialize};
 use song::Song;
 
 #[cfg(test)]
@@ -257,25 +257,25 @@ impl Genius {
     }
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Body {
     pub plain: Option<String>,
     pub html: Option<String>,
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Date {
     pub year: Option<u32>,
     pub month: Option<u32>,
     pub day: Option<u32>,
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 struct Response {
     response: BlobResponse,
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 struct BlobResponse {
     song: Option<Song>,
     hits: Option<Vec<Hit>>,

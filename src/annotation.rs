@@ -1,10 +1,10 @@
-use serde::Deserialize;
+use serde::{Serialize, Deserialize};
 use std::collections::BTreeMap as Map;
 
 use crate::user::{User, UserMetadata};
 use crate::Body;
 
-#[derive(Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Referent {
     pub _type: String,
     pub annotator_id: u32,
@@ -27,7 +27,7 @@ pub struct Referent {
     pub annotations: Vec<Annotation>,
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Annotation {
     pub api_path: String,
     pub body: Body,
@@ -45,7 +45,7 @@ pub struct Annotation {
     pub authors: Vec<AnnotationAuthor>,
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct AnnotationAuthor {
     pub attribution: f32,
     pub user: User,

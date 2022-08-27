@@ -1,7 +1,7 @@
-use serde::Deserialize;
+use serde::{Serialize, Deserialize};
 use std::collections::BTreeMap as Map;
 
-#[derive(Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct User {
     /// User api path
     pub api_path: String,
@@ -27,7 +27,7 @@ pub struct User {
     pub current_user_metadata: UserMetadata,
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct AvatarImage {
     /// Image url.
     pub url: String,
@@ -35,7 +35,7 @@ pub struct AvatarImage {
     pub bounding_box: Map<String, u32>,
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct UserMetadata {
     /// Permissions you have.
     pub permissions: Vec<String>,
@@ -44,7 +44,7 @@ pub struct UserMetadata {
     pub interactions: Option<Interactions>,
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Interactions {
     pub cosign: Option<bool>,
     pub pyong: Option<bool>,

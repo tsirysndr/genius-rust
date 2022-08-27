@@ -25,7 +25,7 @@ struct AuthRequest {
 }
 
 /// Authentication response.
-#[derive(Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct AuthResponse {
     pub access_token: Option<String>,
     pub token_type: Option<String>,
