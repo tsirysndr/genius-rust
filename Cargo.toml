@@ -1,11 +1,11 @@
 [package]
-name = "genius-rs"
+name = "genius-rust"
 description = "Rust library that allows interact with Genius API"
-version = "0.5.0"
-authors = ["Pedro Mendes <pedromendescraft@gmail.com>"]
+version = "0.1.0"
+authors = ["Pedro Mendes <pedromendescraft@gmail.com>", "Tsiry Sandratraina <tsirysndr@aol.com>"]
 edition = "2018"
 license = "MIT"
-repository = "https://github.com/alt-art/genius-rs"
+repository = "https://github.com/tsirysndr/genius-rust"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
