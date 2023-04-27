@@ -46,7 +46,7 @@ pub struct Annotation {
     pub url: String,
     pub verified: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub votes_total: Option<u32>,
+    pub votes_total: Option<i32>,
     pub current_user_metadata: UserMetadata,
     pub authors: Vec<AnnotationAuthor>,
 }
